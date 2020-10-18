@@ -13,14 +13,9 @@ namespace SwaggerAPI.Models.Data
              return null;
          }
 
-        IEnumerable<Categories> Repo.GetCategories()
+         public IEnumerable<object> Search(string q_category, string q_people)
         {
-            throw new System.NotImplementedException();
-        }
-
-        IEnumerable<People> Repo.GetPeople()
-        {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

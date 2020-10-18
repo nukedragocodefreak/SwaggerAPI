@@ -6,5 +6,6 @@ namespace SwaggerAPI.Models.Data
     {
          IEnumerable<Categories> GetCategories();
          IEnumerable<People> GetPeople();      
+         IEnumerable<object> Search(string q_category, string q_people);   
     }
 }
