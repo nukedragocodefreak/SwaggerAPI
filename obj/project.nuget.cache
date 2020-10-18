@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cocxF5yJpF+gSjwOPLaY09RKLOQwj5LrJcldQBR748nnnFRKINKHbwRAlVCBaFYjVPG/ocfl0ZnqqutTLTH3PA==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Noel\\Desktop\\projects\\SwaggerAPI\\SwaggerAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Noel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
