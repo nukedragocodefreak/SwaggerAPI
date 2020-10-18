@@ -1,7 +1,13 @@
+using System;
+using Microsoft.AspNetCore.Mvc;
+
 namespace SwaggerAPI.Controllers
 {
-    public class SwapiController
+    //api/swapi
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SwapiController : ControllerBase
     {
-        
+        aaa
     }
 }

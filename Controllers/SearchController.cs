@@ -1,6 +1,11 @@
+using System;
+using Microsoft.AspNetCore.Mvc;
+
 namespace SwaggerAPI.Controllers
 {
-    public class SearchController
+    [Route("api/[controller]")]
+     [ApiController]
+    public class SearchController : ControllerBase
     {
         
     }

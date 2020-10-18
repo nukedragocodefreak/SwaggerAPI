@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SwaggerAPI.Models.Data
 {
     public interface Repo
