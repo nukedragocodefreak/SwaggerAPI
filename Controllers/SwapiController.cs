@@ -15,10 +15,10 @@ namespace SwaggerAPI.Controllers
         private readonly UseRepo _repository = new UseRepo();
         
         [HttpGet]
-          public ActionResult <Task<People>> GetPeople()
+          public ActionResult <Task<object>> GetPeople()
          {           
              var _people = _repository.GetPeople();
-             return Ok(_people);
+             return Ok(_people.Result);
          }
     }
 }

@@ -14,11 +14,11 @@ namespace SwaggerAPI.Controllers
     {
         private readonly UseRepo _repository = new UseRepo();
         
-        [HttpGet]
+        [HttpPost]
           public ActionResult <Task<object>> Search(string q_category, string q_people)
          {
               var _chuckswapi = _repository.Search(q_category, q_people);
-              return Ok(_chuckswapi);
+              return Ok(_chuckswapi.Result);
          }
     }
 }

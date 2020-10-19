@@ -5,6 +5,6 @@ namespace SwaggerAPI.Models
 {
     public class Categories
     {
-        public List<string> Category { get; set; }
+        public string Category { get; set; }
     }
 }

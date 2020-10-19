@@ -11,18 +11,18 @@ namespace SwaggerAPI.Models.Data
           private static string baseUrlSwapi = "https://swapi.dev/api/";
 
           
-         public async Task<Categories> GetCategories()
+         public async Task<object> GetCategories()
          {
              var callchuck = await GetStringAsync(baseUrlChuck + "categories/" );
             // Here I use Newtonsoft.Json to deserialize JSON string to User object
-             var categories = JsonConvert.DeserializeObject<Categories>(callchuck);
+             var categories = JsonConvert.DeserializeObject<object>(callchuck);
             return categories;
          }
-         public async Task<People> GetPeople()
+         public async Task<object> GetPeople()
          {
              var callswapi = await GetStringAsync(baseUrlSwapi + "people/" );
             // Here I use Newtonsoft.Json to deserialize JSON string to User object
-             var people = JsonConvert.DeserializeObject<People>(callswapi);
+             var people = JsonConvert.DeserializeObject<object>(callswapi);
             return people;
          }
 
@@ -31,8 +31,8 @@ namespace SwaggerAPI.Models.Data
             var call_chuck = await GetStringAsync(baseUrlChuck + "categories/" + q_category);
             var call_swapi = await GetStringAsync(baseUrlSwapi + "people/" + q_people );
             // Here I use Newtonsoft.Json to deserialize JSON string to User object
-            var people = JsonConvert.DeserializeObject<People>(call_swapi);
-            var categories = JsonConvert.DeserializeObject<Categories>(call_chuck);
+            var people = JsonConvert.DeserializeObject<object>(call_swapi);
+            var categories = JsonConvert.DeserializeObject<object>(call_chuck);
 
             //Create an object
             var results = new
@@ -41,7 +41,7 @@ namespace SwaggerAPI.Models.Data
                 Swapi = call_swapi
             }; 
             //Tranform it to Json object
-            string chuck_swapi = JsonConvert.SerializeObject(results);
+            var chuck_swapi = JsonConvert.SerializeObject(results);
             return chuck_swapi;
         }
          private static async Task<string> GetStringAsync(string url)

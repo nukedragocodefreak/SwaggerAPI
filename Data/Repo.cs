@@ -5,8 +5,8 @@ namespace SwaggerAPI.Models.Data
 {
     public interface Repo
     {
-        Task<Categories> GetCategories();
-         Task<People> GetPeople();      
+        Task<object> GetCategories();
+         Task<object> GetPeople();      
          Task<object> Search(string q_category, string q_people);   
     }
 }
