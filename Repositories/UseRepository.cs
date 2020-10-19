@@ -14,7 +14,7 @@ namespace SwaggerAPI.Models.Data
          {
              var callchuck = await GetStringAsync(url.baseUrlChuck + "categories/" );
             // Here I use Newtonsoft.Json to deserialize JSON string to User object
-             var categories = JsonConvert.DeserializeObject<Categories>(callchuck);
+             var categories = JsonConvert.DeserializeObject<Categories>(callchuck);           
             return categories;
          }
          public async Task<People> GetPeople()
@@ -41,7 +41,8 @@ namespace SwaggerAPI.Models.Data
             }; 
             //Tranform it to Json object
             var chuck_swapi = JsonConvert.SerializeObject(search);
-            return null;
+             var _chuck_swapi = JsonConvert.DeserializeObject<Search>(chuck_swapi);
+            return _chuck_swapi;
         }
          private static async Task<string> GetStringAsync(string url)
     {
