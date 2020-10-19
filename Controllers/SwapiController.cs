@@ -17,10 +17,10 @@ namespace SwaggerAPI.Controllers
         
         
         [HttpGet]
-          public ActionResult <Task<object>> GetPeople()
+          public async Task<People> GetPeople()
          {           
-             var _people = _repository.GetPeople();
-             return Ok(_people.Result);
+             var _people = await _repository.GetPeople();
+             return _people;
          }
     }
 }

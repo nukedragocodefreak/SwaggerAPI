@@ -16,10 +16,10 @@ namespace SwaggerAPI.Controllers
         private readonly UseRepo _repository = new UseRepo();
         
         [HttpGet]
-        public ActionResult <Task<object>> GetCategories()
+        public async Task<Categories> GetCategories()
          {
-             var _categories = _repository.GetCategories();
-             return Ok(_categories.Result);
+             var _categories = await _repository.GetCategories();
+             return _categories;
          }
     }
 }

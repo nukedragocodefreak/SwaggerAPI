@@ -16,10 +16,10 @@ namespace SwaggerAPI.Controllers
         private readonly UseRepo _repository = new UseRepo();
         
         [HttpPost]
-          public ActionResult <Task<object>> Search(SearchData searchData)
+          public async Task<object> Search(SearchData searchData)
          {
-              var _chuckswapi = _repository.Search(searchData);
-              return Ok(_chuckswapi.Result);
+              var _chuckswapi = await  _repository.Search(searchData);
+              return _chuckswapi;
          }
     }
 }
