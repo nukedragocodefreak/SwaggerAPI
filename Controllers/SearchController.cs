@@ -8,6 +8,7 @@ using SwaggerAPI.Models.Data;
 namespace SwaggerAPI.Controllers
 {
     //api/search
+    [Produces("application/json")]
     [Route("api/[controller]")]
      [ApiController]
     public class SearchController : ControllerBase

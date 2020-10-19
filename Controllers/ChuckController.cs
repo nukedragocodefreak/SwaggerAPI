@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace SwaggerAPI.Controllers
 {
     //api/chuck
+    [Produces("application/json")]
      [Route("api/[controller]/categories")]
      [ApiController]
     public class ChuckController : ControllerBase

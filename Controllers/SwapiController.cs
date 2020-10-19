@@ -8,11 +8,13 @@ using SwaggerAPI.Models.Data;
 namespace SwaggerAPI.Controllers
 {
     //api/swapi
+    [Produces("application/json")]
     [Route("api/[controller]/people")]
     [ApiController]
     public class SwapiController : ControllerBase
     {
         private readonly UseRepo _repository = new UseRepo();
+        
         
         [HttpGet]
           public ActionResult <Task<object>> GetPeople()
