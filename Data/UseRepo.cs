@@ -26,10 +26,10 @@ namespace SwaggerAPI.Models.Data
             return people;
          }
 
-         public async Task<object> Search(string q_category, string q_people)
+         public async Task<object> Search(SearchData searchData)
         {
-            var call_chuck = await GetStringAsync(baseUrlChuck + "categories/" + q_category);
-            var call_swapi = await GetStringAsync(baseUrlSwapi + "people/" + q_people );
+            var call_chuck = await GetStringAsync(baseUrlChuck + "categories/" + searchData.q_category);
+            var call_swapi = await GetStringAsync(baseUrlSwapi + "people/" + searchData.q_people );
             // Here I use Newtonsoft.Json to deserialize JSON string to User object
             var people = JsonConvert.DeserializeObject<object>(call_swapi);
             var categories = JsonConvert.DeserializeObject<object>(call_chuck);

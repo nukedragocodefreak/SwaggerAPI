@@ -16,9 +16,9 @@ namespace SwaggerAPI.Controllers
         private readonly UseRepo _repository = new UseRepo();
         
         [HttpPost]
-          public ActionResult <Task<object>> Search(string q_category, string q_people)
+          public ActionResult <Task<object>> Search(SearchData searchData)
          {
-              var _chuckswapi = _repository.Search(q_category, q_people);
+              var _chuckswapi = _repository.Search(searchData);
               return Ok(_chuckswapi.Result);
          }
     }

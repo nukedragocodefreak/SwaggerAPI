@@ -7,6 +7,6 @@ namespace SwaggerAPI.Models.Data
     {
         Task<object> GetCategories();
          Task<object> GetPeople();      
-         Task<object> Search(string q_category, string q_people);   
+         Task<object> Search(SearchData searchData);   
     }
 }
