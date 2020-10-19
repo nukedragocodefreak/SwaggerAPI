@@ -8,7 +8,7 @@ namespace SwaggerAPI.Models.Data
     public class UseRepo : Repo
     {
          private static string baseUrlChuck = "https://api.chucknorris.io/jokes/";
-          private static string baseUrlSwapi = "https://swapi.dev/api/people";
+          private static string baseUrlSwapi = "https://swapi.dev/api/";
 
           
          public async Task<Categories> GetCategories()

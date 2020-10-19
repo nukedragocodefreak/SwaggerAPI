@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SwaggerAPI.Models;
 using SwaggerAPI.Models.Data;
@@ -11,12 +12,13 @@ namespace SwaggerAPI.Controllers
      [ApiController]
     public class SearchController : ControllerBase
     {
-        private readonly UseRepo useRepo = new UseRepo();
+        private readonly UseRepo _repository = new UseRepo();
         
         [HttpGet]
-          public ActionResult <IEnumerable<object>> Search(string q_category, string q_people)
+          public ActionResult <Task<object>> Search(string q_category, string q_people)
          {
-             return null;
+              var _chuckswapi = _repository.Search(q_category, q_people);
+              return Ok(_chuckswapi);
          }
     }
 }

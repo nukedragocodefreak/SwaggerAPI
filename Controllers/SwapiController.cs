@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SwaggerAPI.Models;
 using SwaggerAPI.Models.Data;
@@ -11,12 +12,13 @@ namespace SwaggerAPI.Controllers
     [ApiController]
     public class SwapiController : ControllerBase
     {
-        private readonly UseRepo useRepo = new UseRepo();
+        private readonly UseRepo _repository = new UseRepo();
         
         [HttpGet]
-          public ActionResult <IEnumerable<People>> GetPeople()
-         {
-             return null;
+          public ActionResult <Task<People>> GetPeople()
+         {           
+             var _people = _repository.GetPeople();
+             return Ok(_people);
          }
     }
 }
